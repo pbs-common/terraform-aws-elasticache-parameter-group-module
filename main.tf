@@ -11,4 +11,6 @@ resource "aws_elasticache_parameter_group" "parameter_group" {
       value = parameter.value.value
     }
   }
+
+  tags = local.tags
 }

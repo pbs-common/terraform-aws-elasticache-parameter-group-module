@@ -7,7 +7,7 @@
 Use this URL for the source of the module. See the usage examples below for more details.
 
 ```hcl
-github.com/pbs/terraform-aws-elasticache-parameter-group-module?ref=0.0.27
+github.com/pbs/terraform-aws-elasticache-parameter-group-module?ref=x.y.z
 ```
 
 ### Alternative Installation Methods
@@ -24,7 +24,7 @@ Integrate this module like so:
 
 ```hcl
 module "elasticache_parameter_group" {
-  source = "github.com/pbs/terraform-aws-elasticache-parameter-group-module?ref=0.0.27"
+  source = "github.com/pbs/terraform-aws-elasticache-parameter-group-module?ref=x.y.z"
 
   name = "example"
 
@@ -42,7 +42,7 @@ module "elasticache_parameter_group" {
 
 If this repo is added as a subtree, then the version of the module should be close to the version shown here:
 
-`0.0.27`
+`x.y.z`
 
 Note, however that subtrees can be altered as desired within repositories.
 
@@ -58,8 +58,8 @@ Below is automatically generated documentation on this Terraform module using [t
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.2 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.5.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.13.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.0.0 |
 
 ## Providers
 
@@ -76,15 +76,22 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_elasticache_parameter_group.parameter_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_parameter_group) | resource |
+| [aws_default_tags.common_tags](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/default_tags) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_environment"></a> [environment](#input\_environment) | Environment (sharedtools, dev, staging, qa, prod) | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name of the elasticache parameter group. | `string` | n/a | yes |
+| <a name="input_organization"></a> [organization](#input\_organization) | Organization using this module. Used to prefix tags so that they are easily identified as being from your organization | `string` | n/a | yes |
+| <a name="input_product"></a> [product](#input\_product) | Tag used to group resources according to product | `string` | n/a | yes |
+| <a name="input_repo"></a> [repo](#input\_repo) | Tag used to point to the repo using this module | `string` | n/a | yes |
 | <a name="input_engine"></a> [engine](#input\_engine) | Engine of the elasticache parameter group. | `string` | `"redis"` | no |
+| <a name="input_owner"></a> [owner](#input\_owner) | Tag used to group resources according to owner | `string` | `"plops"` | no |
 | <a name="input_parameter_group_version"></a> [parameter\_group\_version](#input\_parameter\_group\_version) | The version being used for the application when creating a parameter group. | `string` | `"7"` | no |
 | <a name="input_parameters"></a> [parameters](#input\_parameters) | Additional parameters that will be added to parameter group. | <pre>list(object({<br>    name  = string<br>    value = string<br>  }))</pre> | `[]` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Extra tags | `map(string)` | `{}` | no |
 
 ## Outputs
 
