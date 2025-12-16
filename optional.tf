@@ -2,6 +2,11 @@ variable "engine" {
   description = "Engine of the elasticache parameter group."
   default     = "redis"
   type        = string
+
+  validation {
+    condition     = contains(["redis", "memcached", "valkey"], var.engine)
+    error_message = "The engine must be one of: redis, memcached, or valkey."
+  }
 }
 
 variable "parameter_group_version" {
