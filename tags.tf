@@ -36,8 +36,8 @@ variable "organization" {
 
 variable "owner" {
   description = "Tag used to group resources according to owner"
-
-  default = "plops"
+  type        = string
+  default     = "plops"
 
   validation {
     condition     = can(regex("[a-z\\-]+", var.owner))
