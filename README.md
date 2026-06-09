@@ -7,7 +7,7 @@
 Use this URL for the source of the module. See the usage examples below for more details.
 
 ```hcl
-github.com/pbs/terraform-aws-elasticache-parameter-group-module?ref=1.1.1
+github.com/pbs/terraform-aws-elasticache-parameter-group-module?ref=x.y.z
 ```
 
 ### Alternative Installation Methods
@@ -24,7 +24,7 @@ Integrate this module like so:
 
 ```hcl
 module "elasticache_parameter_group" {
-  source = "github.com/pbs/terraform-aws-elasticache-parameter-group-module?ref=1.1.1"
+  source = "github.com/pbs/terraform-aws-elasticache-parameter-group-module?ref=x.y.z"
 
   name = "example"
 
@@ -42,7 +42,7 @@ module "elasticache_parameter_group" {
 
 If this repo is added as a subtree, then the version of the module should be close to the version shown here:
 
-`1.1.1`
+`x.y.z`
 
 Note, however that subtrees can be altered as desired within repositories.
 
@@ -65,7 +65,7 @@ Below is automatically generated documentation on this Terraform module using [t
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.35.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.49.0 |
 
 ## Modules
 
@@ -87,6 +87,7 @@ No modules.
 | <a name="input_organization"></a> [organization](#input\_organization) | Organization using this module. Used to prefix tags so that they are easily identified as being from your organization | `string` | n/a | yes |
 | <a name="input_product"></a> [product](#input\_product) | Tag used to group resources according to product | `string` | n/a | yes |
 | <a name="input_repo"></a> [repo](#input\_repo) | Tag used to point to the repo using this module | `string` | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | Description for the elasticache parameter group. Defaults to: "ElastiCache parameter group for <name> <engine>". | `string` | `null` | no |
 | <a name="input_engine"></a> [engine](#input\_engine) | Engine of the elasticache parameter group. | `string` | `"redis"` | no |
 | <a name="input_owner"></a> [owner](#input\_owner) | Tag used to group resources according to owner | `string` | `"plops"` | no |
 | <a name="input_parameter_group_version"></a> [parameter\_group\_version](#input\_parameter\_group\_version) | The version being used for the application when creating a parameter group. | `string` | `"7"` | no |
