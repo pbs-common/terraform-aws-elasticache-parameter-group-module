@@ -2,7 +2,7 @@ resource "aws_elasticache_parameter_group" "parameter_group" {
   name   = var.name
   family = "${var.engine}${var.parameter_group_version}"
 
-  description = "ElastiCache parameter group for ${var.name} ${var.engine}"
+  description = local.description
 
   dynamic "parameter" {
     for_each = var.parameters

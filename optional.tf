@@ -23,3 +23,9 @@ variable "parameters" {
   }))
   default = []
 }
+
+variable "description" {
+  description = "Description for the elasticache parameter group. Defaults to: \"ElastiCache parameter group for <name> <engine>\"."
+  default     = null
+  type        = string
+}

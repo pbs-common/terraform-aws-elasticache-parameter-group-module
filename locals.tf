@@ -1,4 +1,6 @@
 locals {
+  description = var.description != null ? var.description : "ElastiCache parameter group for ${var.name} ${var.engine}"
+
   defaulted_tags = merge(
     var.tags,
     {
